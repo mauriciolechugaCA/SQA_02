@@ -7,6 +7,11 @@ namespace TestProject1
         {
         }
 
+        // Maximum and minimum values:
+        // Product ID: 5 - 50000
+        // Price: $5 - $5000
+        // Stock: 5 - 500000
+
         /// <summary>
         /// Test cases for ProductID
         /// </summary>
