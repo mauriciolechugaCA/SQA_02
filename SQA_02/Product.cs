@@ -27,14 +27,14 @@
             return StockAmount;
         }
 
-        // Method to check if the ProdName is not null.
-        public bool ValidateStandardName()
+        // Method to check if the ProdName is empty.
+        public bool ValidateEmptyName()
         {
-            if (ProdName == null)
+            if (ProdName == "")
             {
-                return false;
+                return true;
             }
-            return true;
+            return false;
         }
 
         // Method to check the length of ProdName.

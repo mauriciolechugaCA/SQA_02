@@ -66,7 +66,7 @@ namespace TestProject1
             Product product = new Product(1001, expectedName, 500.0, 50);
 
             // Act
-            bool result = product.ValidateStandardName();
+            bool result = product.ValidateEmptyName();
 
             // Assert
             Assert.That(result, Is.True);
