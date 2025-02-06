@@ -66,6 +66,7 @@
                 return false;
             }
             return true;
+        }
 
         //Method to check the range of the ProdID
         public bool CheckProdIDRange()
