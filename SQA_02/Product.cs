@@ -26,5 +26,47 @@
             StockAmount -= amount;
             return StockAmount;
         }
+
+        // Method to check if the ProdName is not null.
+        public bool ValidateStandardName()
+        {
+            if (ProdName == null)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        // Method to check the length of ProdName.
+        public bool ValidateLengthName()
+        {
+            if (ProdName.Length < 5 || ProdName.Length > 100)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        // Method to check if the ProdName has a Special Character.
+        public bool ValidateSpecialCharactersName()
+        {
+            if (ProdName.Contains("!") || ProdName.Contains("@") || ProdName.Contains("#") || ProdName.Contains("$") || ProdName.Contains("%") || ProdName.Contains("^") || ProdName.Contains("&") || ProdName.Contains("*") || ProdName.Contains("(") || ProdName.Contains(")") || ProdName.Contains("-") || ProdName.Contains("_") || ProdName.Contains("+") || ProdName.Contains("=") || ProdName.Contains("{") ||
+                ProdName.Contains("}") || ProdName.Contains("[") || ProdName.Contains("]") || ProdName.Contains("|") || ProdName.Contains(":") || ProdName.Contains(";") || ProdName.Contains("'") || ProdName.Contains("\"") || ProdName.Contains("<") || ProdName.Contains(">") || ProdName.Contains(",") || ProdName.Contains(".") || ProdName.Contains("?") || ProdName.Contains("/") || ProdName.Contains("~") || ProdName.Contains("`"))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        // Method to check if StockAmount is between 5 and 500000.
+        public bool ValidateStockAmount()
+        {
+            if (StockAmount < 5 || StockAmount > 500000)
+            {
+                return false;
+            }
+            return true;
+
+        }
     }
 }
