@@ -67,49 +67,50 @@ namespace TestProject1
         /// Test cases for ProductName
         /// </summary>
         [Test]
-        // ProdName Test 1: Checks if the property returns the expected name ("Standard")
-        public void ProdName_Standard_ReturnsExpectedValue()
+        // ProdName Test 1: Checks if the property returns the expected length.
+        public void ValidateLengthName_ExpectedLengthName_True()
         {
             // Arrange
-            string expectedName = "Standard";
+            string expectedName = "TestProductName";
             Product product = new Product(1000, expectedName, 500.0, 50);
 
             // Act
-            string actualName = product.ProdName;
+            bool result = product.ValidateLengthName();
 
             // Assert
-            Assert.AreEqual(expectedName, actualName);
+            Assert.That(result, Is.True);
         }
 
         [Test]
         // ProdName Test 2: Checks if the property returns an empty string
-        public void ProdName_Empty_ReturnsExpectedValue()
+        public void ValidateEmptyName_ExpectedNameEmpty_True()
         {
             // Arrange
             string expectedName = "";
             Product product = new Product(1001, expectedName, 500.0, 50);
 
             // Act
-            string actualName = product.ProdName;
+            bool result = product.ValidateEmptyName();
 
             // Assert
-            Assert.AreEqual(expectedName, actualName);
+            Assert.That(result, Is.True);
         }
 
         [Test]
         // ProdName Test 3: Checks if the property returns the expected name with special characters.
-        public void ProdName_SpecialCharacters_ReturnsExpectedValue()
+        public void ValidateSpecialCharactersName_ExpectedNameSpecialCharacters_True()
         {
             // Arrange
-            string expectedName = "Pr@d#ct$.";
+            string expectedName = "Special!@#$%^&*()_-+={}[]|:;'\"<>,.?/~`";
             Product product = new Product(1002, expectedName, 500.0, 50);
 
             // Act
-            string actualName = product.ProdName;
+            bool result = product.ValidateSpecialCharactersName();
 
             // Assert
-            Assert.AreEqual(expectedName, actualName);
+            Assert.That(result, Is.True);
         }
+
 
         /// <summary>
         /// Test cases for ItemPrice - Price: $5 - $5000
@@ -163,48 +164,48 @@ namespace TestProject1
         /// Test cases for StockAmount
         /// </summary>
         [Test]
-        // StockAmount Test 1: Checks if the property returns the lower boundary stock amount
-        public void StockAmount_LowerBoundary_ReturnsExpectedValue()
+        // StockAmount Test 1: Checks if the property returns the expected stock amount (Minimum value)
+        public void ValidateStockAmount_expectedStock5_True()
         {
             // Arrange
             int expectedStock = 5;
             Product product = new Product(1003, "Test", 500.0, expectedStock);
 
             // Act
-            int actualStock = product.StockAmount;
+            bool result = product.ValidateStockAmount();
 
             // Assert
-            //Assert.AreEqual(expectedStock, actualStock);
+            Assert.That(result, Is.True);
         }
 
         [Test]
-        // StockAmount Test 2: Checks if the property returns the middle value stock amount
-        public void StockAmount_MidValue_ReturnsExpectedValue()
+        // StockAmount Test 2: Checks if the property returns the expected stock amount (Nominal) 
+        public void ValidateStockAmount_expectedStock250000_True()
         {
             // Arrange
             int expectedStock = 250000;
             Product product = new Product(1004, "Test", 500.0, expectedStock);
 
             // Act
-            int actualStock = product.StockAmount;
+            bool result = product.ValidateStockAmount();
 
             // Assert
-            //Assert.AreEqual(expectedStock, actualStock);
+            Assert.That(result, Is.True);
         }
 
         [Test]
-        // StockAmount Test 3: Checks if the property returns the upper boundary stock amount
-        public void StockAmount_UpperBoundary_ReturnsExpectedValue()
+        // StockAmount Test 3: Checks if the property returns the expected stock amount (maximum value)
+        public void ValidateStockAmount_expectedStock500000_True()
         {
             // Arrange
             int expectedStock = 500000;
             Product product = new Product(1005, "Test", 500.0, expectedStock);
 
-            // Act
-            int actualStock = product.StockAmount;
+        // Act
+            bool result = product.ValidateStockAmount();
 
-            // Assert
-            //Assert.AreEqual(expectedStock, actualStock);
+        // Assert
+        Assert.That(result, Is.True);
         }
 
         /// <summary>
