@@ -67,6 +67,30 @@
             }
             return true;
 
+        //Method to check the range of the ProdID
+        public bool CheckProdIDRange()
+        {
+            if (ProdID >= 5 && ProdID <= 50000)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        //Method to check the range of the ItemPrice
+        public bool CheckItemPriceRange()
+        {
+            if (ItemPrice >= 5 && ItemPrice <= 5000)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
